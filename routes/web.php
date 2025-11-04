@@ -2,18 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/produk', function () {
-    $produk = [
-        ['kode' => 'BRG001', 'nama' => 'Pena', 'jenis' => 'Alat tulis', 'harga' => 20000],
-        ['kode' => 'BRG002', 'nama' => 'Buku', 'jenis' => 'Alat tulis', 'harga' => 15000]
-    ];
-    return view('produk', compact('produk'));
-});
-
 Route::get('/tambah-produk', function () {
-    return view('tambah-produk');
+    // Array jenis produk
+    $jenisProduk = ["Pilih Produk", "Alat tulis", "Elektronik", "Sembako"];
+
+    // Kirim data ke view
+    return view('tambah-produk', compact('jenisProduk'));
 });

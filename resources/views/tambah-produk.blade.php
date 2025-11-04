@@ -5,23 +5,26 @@
     <h1 class="mb-4">Form Tambah Produk</h1>
 
     <form>
-        <!-- Baris Pertama -->
         <div class="row g-3">
+            <!-- Kode Produk -->
             <div class="col-md-4">
                 <label for="kode" class="form-label">Kode Produk</label>
                 <input type="text" id="kode" class="form-control" placeholder="Input Kode Produk">
             </div>
+
+            <!-- Nama Produk -->
             <div class="col-md-4">
                 <label for="nama" class="form-label">Nama Produk</label>
                 <input type="text" id="nama" class="form-control" placeholder="Input Nama Produk">
             </div>
+
+            <!-- Jenis Produk -->
             <div class="col-md-4">
                 <label for="jenis" class="form-label">Jenis Produk</label>
                 <select id="jenis" class="form-control">
-                    <option selected>Pilih Produk</option>
-                    <option>Alat Tulis</option>
-                    <option>Elektronik</option>
-                    <option>Lainnya</option>
+                    @for ($i = 0; $i < count($jenisProduk); $i++)
+                        <option>{{ $jenisProduk[$i] }}</option>
+                    @endfor
                 </select>
             </div>
         </div>
